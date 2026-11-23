@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>暑假最難忘的回憶｜花蓮家庭慢旅日記 🌊✨</title>
+  <!-- 引入可愛圓潤的中文字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FFFDF7;
+      --bg-sand: #F7F2E7;
+      --ocean-blue: #2B8CBE;
+      --ocean-light: #E0F3FA;
+      --sunset-coral: #FF7E67;
+      --sunset-yellow: #FFD166;
+      --night-indigo: #24344D;
+      --text-main: #3D405B;
+      --text-muted: #6D718C;
+      --card-shadow: 0 12px 30px rgba(43, 140, 190, 0.12);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-cream);
+      background-image: radial-gradient(#DCEEF5 1.5px, transparent 1.5px);
+      background-size: 28px 28px;
+      color: var(--text-main);
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    /* 頂部閱讀進度條 */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--ocean-blue), var(--sunset-coral), var(--sunset-yellow));
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s ease-out;
+    }
+
+    /* 懸浮膠囊導覽列 */
+    nav {
+      position: sticky;
+      top: 16px;
+      z-index: 900;
+      max-width: 760px;
+      margin: 16px auto 0;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      border: 2px solid #FFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-brand {
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--ocean-blue);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--ocean-light);
+      color: var(--ocean-blue);
+      transform: translateY(-2px);
+    }
+
+    /* Hero 封面區塊 */
+    header.hero {
+      max-width: 960px;
+      margin: 36px auto 50px;
+      padding: 0 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      background: var(--sunset-yellow);
+      color: #5C4300;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 6px 18px;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px rgba(255, 209, 102, 0.4);
+      margin-bottom: 16px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    header.hero h1 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      font-weight: 900;
+      color: var(--night-indigo);
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    header.hero h1 span {
+      color: var(--ocean-blue);
+      position: relative;
+      display: inline-block;
+    }
+
+    header.hero h1 span::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 209, 102, 0.55);
+      z-index: -1;
+      border-radius: 6px;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-meta span {
+      background: #FFF;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid #EAE4D7;
+    }
+
+    /* 序曲卡片：出發前的興奮 */
+    .intro-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      box-shadow: var(--card-shadow);
+      border: 2px dashed #CBE7F5;
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+      text-align: left;
+    }
+
+    .intro-card::before {
+      content: "✈️ 出發前夜";
+      position: absolute;
+      top: -15px;
+      left: 28px;
+      background: var(--ocean-blue);
+      color: #FFF;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 999px;
+    }
+
+    .intro-card p {
+      font-size: 1.12rem;
+      color: var(--text-main);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    /* 旅遊章節卡片 */
+    .story-section {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .story-section:hover {
+      transform: translateY(-4px);
+    }
+
+    /* 手作紙膠帶裝飾 */
+    .washi-tape {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 130px;
+      height: 28px;
+      background: rgba(255, 126, 103, 0.45);
+      backdrop-filter: blur(2px);
+      border-left: 2px dotted rgba(255,255,255,0.7);
+      border-right: 2px dotted rgba(255,255,255,0.7);
+    }
+
+    .washi-tape.blue { background: rgba(43, 140, 190, 0.35); transform: translateX(-50%) rotate(2deg); }
+    .washi-tape.yellow { background: rgba(255, 209, 102, 0.6); transform: translateX(-50%) rotate(-1.5deg); }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .time-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--ocean-light);
+      color: var(--ocean-blue);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .time-pill.coral {
+      background: #FFE8E3;
+      color: #D94E34;
+    }
+
+    .time-pill.night {
+      background: #E4E9F2;
+      color: var(--night-indigo);
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--night-indigo);
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    /* 嚴格 16:9 圖片框架設定，保證整齊不跑版 */
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      background: #EEF3F7;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+      cursor: zoom-in;
+      border: 6px solid #FFF;
+      outline: 1px solid #E6E1D6;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(36, 52, 77, 0.78);
+      color: #FFF;
+      font-size: 0.82rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+
+    .story-text {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 24px;
+    }
+
+    .highlight-words {
+      background: linear-gradient(transparent 60%, rgba(255, 209, 102, 0.65) 40%);
+      font-weight: 700;
+      padding: 0 3px;
+    }
+
+    /* 互動元件區域 */
+    .interactive-box {
+      background: var(--bg-sand);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border: 1px solid #E8DFC8;
+    }
+
+    .interactive-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-action {
+      background: var(--ocean-blue);
+      color: #FFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(43, 140, 190, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      background: #21739E;
+    }
+
+    .btn-action:active {
+      transform: scale(0.96);
+    }
+
+    .btn-like {
+      background: #FFF;
+      color: var(--sunset-coral);
+      border: 2px solid #FFD6CE;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-like:hover, .btn-like.liked {
+      background: var(--sunset-coral);
+      color: #FFF;
+      border-color: var(--sunset-coral);
+    }
+
+    /* 撿石頭小遊戲收藏區 */
+    .stone-tray {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      min-height: 44px;
+      align-items: center;
+    }
+
+    .stone-badge {
+      background: #FFF;
+      border: 1.5px solid #D5CEC0;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* 美食打卡清單 */
+    .food-checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .food-item {
+      background: #FFF;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1.5px solid #EADBC8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .food-item.checked {
+      background: #FFF3D6;
+      border-color: var(--sunset-yellow);
+      color: #8A5A00;
+    }
+
+    /* 星空許願星 */
+    .star-sky-box {
+      background: linear-gradient(135deg, #1E2B42 0%, #2F486D 100%);
+      color: #FFF;
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .star-sky-box h4 {
+      color: var(--sunset-yellow);
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .star-quote {
+      font-size: 0.98rem;
+      color: #E2ECFF;
+      font-style: italic;
+    }
+
+    /* 旅行結語卡片 */
+    .outro-card {
+      background: linear-gradient(135deg, #E8F6FC 0%, #FFF6E5 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      border: 2px solid #FFF;
+    }
+
+    .outro-card h2 {
+      font-size: 1.8rem;
+      color: var(--night-indigo);
+      margin-bottom: 16px;
+    }
+
+    .outro-card p {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      font-size: 1.12rem;
+    }
+
+    .quote-banner {
+      display: inline-block;
+      background: #FFF;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: var(--ocean-blue);
+      box-shadow: 0 6px 18px rgba(43, 140, 190, 0.12);
+      font-size: 1.08rem;
+    }
+
+    /* 家庭明信片留言板 */
+    .guestbook {
+      background: #FFF;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .guestbook h3 {
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+      color: var(--night-indigo);
+    }
+
+    .guestbook-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .guestbook-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 2px solid #E2E8F0;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .guestbook-form input:focus {
+      border-color: var(--ocean-blue);
+    }
+
+    .notes-wall {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .note-card {
+      background: #FFFDF0;
+      border: 1.5px solid #F3E5AB;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .note-author {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    /* 燈箱預覽 */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 26, 38, 0.88);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 85vh;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 4px solid #FFF;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 48px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .story-section { padding: 24px 20px; }
+      .intro-card { padding: 26px 22px; }
+      nav { border-radius: 20px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 閱讀進度條 -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a href="#top" class="nav-brand">🌊 花蓮夏日時光誌</a>
+    <div class="nav-links">
+      <a href="#beach">🏖️ 湛藍海邊</a>
+      <a href="#nightmarket">🍢 夜市美食</a>
+      <a href="#stargazing">✨ 民宿星空</a>
+      <a href="#reflection">💌 旅行心得</a>
+    </div>
+  </nav>
+
+  <!-- Hero 封面區塊 -->
+  <header class="hero" id="top">
+    <div class="badge-tag">☀️ Summer Family Travel Log</div>
+    <h1>暑假最難忘的回憶：<br>與家人的<span>花蓮</span>慢旅日記</h1>
+    <div class="hero-meta">
+      <span>📍 目的地：台灣・花蓮</span>
+      <span>👨‍👩‍👧‍👦 旅伴：最愛的家人與弟弟</span>
+      <span>🎒 心情指數：興奮到睡不著 ★★★★★</span>
+    </div>
+
+    <!-- 出發前夕序曲 -->
+    <div class="intro-card">
+      <p>
+        今年暑假，我最難忘的回憶就是和家人一起去<strong>花蓮旅行</strong>。那是我期待很久的一次旅行，出發前一天，我興奮得幾乎睡不著，還一直想著旅途中會遇到什麼有趣的事情！
+      </p>
+    </div>
+  </header>
+
+  <!-- 主要圖文日記內容 -->
+  <main>
+
+    <!-- 第一站：花蓮海邊 -->
+    <article class="story-section" id="beach">
+      <div class="washi-tape blue"></div>
+      <div class="section-header">
+        <span class="time-pill">☀️ 第一站・陽光午後的海風</span>
+        <button class="btn-like" onclick="toggleLike(this, 'like1')">
+          ❤️ 喜歡這段回憶 (<span id="like1">12</span>)
+        </button>
+        <h2 class="section-title">閃閃發亮的湛藍海岸，與濕透卻超開心的球鞋</h2>
+      </div>
+
+      <!-- 16:9 專屬生成實景照片 1 -->
+      <div class="photo-frame" onclick="openLightbox(this)">
+        <img src="image_generation_content/3360930680735451351" alt="花蓮海邊陽光下閃閃發亮的海水與撿石頭的歡樂時光" />
+        <span class="photo-caption">📸 點擊放大｜花蓮太平洋礫石海灘</span>
+      </div>
+
+      <p class="story-text">
+        到了花蓮後，我們先到海邊散步。<span class="highlight-words">湛藍的海水在陽光下閃閃發亮</span>，海風吹在臉上，讓人覺得非常舒服。我和弟弟一起撿漂亮的石頭，還比賽誰撿到的石頭最特別。雖然最後我的鞋子被海水弄濕了，但大家都笑得很開心！
+      </p>
+
+      <!-- 互動小遊戲：海邊撿石頭大賽 -->
+      <div class="interactive-box">
+        <div class="interactive-top">
+          <strong>🪨 互動小遊戲：跟弟弟一起比賽撿特別的石頭！</strong>
+          <button class="btn-action" onclick="pickStone()">✨ 彎腰撿一顆石頭</button>
+        </div>
+        <div class="stone-tray" id="stoneTray">
+          <span style="color: var(--text-muted); font-size: 0.9rem;">點擊右側按鈕，看看你在花蓮海邊撿到了什麼寶藏石頭吧！</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 第二站：花蓮夜市 -->
+    <article class="story-section" id="nightmarket">
+      <div class="washi-tape"></div>
+      <div class="section-header">
+        <span class="time-pill coral">🌇 第二站・熱鬧滾滾的晚餐時光</span>
+        <button class="btn-like" onclick="toggleLike(this, 'like2')">
+          ❤️ 喜歡這段回憶 (<span id="like2">18</span>)
+        </button>
+        <h2 class="section-title">香氣四溢的夜市巡禮：烤肉、炸物與沁涼冷飲</h2>
+      </div>
+
+      <!-- 16:9 專屬生成實景照片 2 -->
+      <div class="photo-frame" onclick="openLightbox(this)">
+        <img src="image_generation_content/5651517025361548140" alt="花蓮夜市香噴噴的烤肉、炸物與冰涼飲料" />
+        <span class
